@@ -135,6 +135,8 @@ the ``part`` and ``partition`` commands:
 -  ``--label label``: Specifies the label to give to the filesystem to
    be made on the partition. If the given label is already in use by
    another filesystem, a new label is created for the partition.
+   If the partition table format is GPT and the ``--part-name`` is not
+   defined the partition name is set as the value of  ``--label``.
 
 -  ``--active``: Marks the partition as active.
 
@@ -172,7 +174,9 @@ the ``part`` and ``partition`` commands:
    "1.3".
 
 -  ``--part-name``: This option is a Wic-specific option that
-   specifies a name for GPT partitions.
+   specifies a name for GPT partitions. If both ``--part-name`` and
+   ``--label`` are defined, the partition name is set to the value of
+   ``--part-name``.
 
 -  ``--part-type``: This option is a Wic-specific option that
    specifies the partition type globally unique identifier (GUID) for
